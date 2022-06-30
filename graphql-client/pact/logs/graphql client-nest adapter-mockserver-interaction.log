@@ -1,0 +1,268 @@
+I, [2022-06-15T14:49:13.843596 #12853]  INFO -- : Registered expected interaction POST /graphql
+I, [2022-06-15T14:49:13.844940 #12853]  INFO -- : Received request POST /graphql
+D, [2022-06-15T14:49:13.845602 #12853] DEBUG -- : {
+  "description": "a character request",
+  "request": {
+    "method": "POST",
+    "path": "/graphql",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "operationName": "Characters",
+      "query": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "\n                            query Characters($page: Int = 1){\n                                characters(page: $page){\n                                    count\n                                    results{\n                                        name\n                                        gender\n                                        mass\n                                        height\n                                    }\n                                }\n                            }\n                        ",
+          "matcher": {
+            "json_class": "Regexp",
+            "o": 0,
+            "s": "\\s*query\\s*Characters\\(\\$page:\\s*Int\\s*=\\s*1\\)\\{\\s*characters\\(page:\\s*\\$page\\)\\{\\s*count\\s*results\\{\\s*name\\s*gender\\s*mass\\s*height\\s*\\}\\s*\\}\\s*\\}\\s*"
+          }
+        }
+      },
+      "variables": {
+        "page": 1
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "data": {
+        "characters": {
+          "count": {
+            "json_class": "Pact::SomethingLike",
+            "contents": 82
+          },
+          "results": {
+            "json_class": "Pact::ArrayLike",
+            "contents": {
+              "name": {
+                "json_class": "Pact::SomethingLike",
+                "contents": "Luke Skywalker"
+              },
+              "gender": {
+                "json_class": "Pact::SomethingLike",
+                "contents": "male"
+              },
+              "mass": {
+                "json_class": "Pact::SomethingLike",
+                "contents": "77"
+              },
+              "height": {
+                "json_class": "Pact::SomethingLike",
+                "contents": "172"
+              }
+            },
+            "min": 1
+          }
+        }
+      }
+    }
+  },
+  "metadata": null
+}
+D, [2022-06-15T14:49:13.846678 #12853] DEBUG -- : {
+  "path": "/graphql",
+  "query": "",
+  "method": "post",
+  "body": {
+    "query": "\n        query Characters($page: Int = 1){\n            characters(page: $page){\n              count\n              results{\n                name\n                gender\n                mass\n                height\n              }\n            }\n          }\n          \n        ",
+    "variables": {
+      "page": 1
+    },
+    "operationName": "Characters"
+  },
+  "headers": {
+    "Content-Length": "349",
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "User-Agent": "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)",
+    "Accept-Encoding": "gzip,deflate",
+    "Connection": "close",
+    "Host": "127.0.0.1:34285",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2022-06-15T14:49:13.850184 #12853]  INFO -- : Found matching response for POST /graphql
+D, [2022-06-15T14:49:13.851298 #12853] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "data": {
+      "characters": {
+        "count": {
+          "json_class": "Pact::SomethingLike",
+          "contents": 82
+        },
+        "results": {
+          "json_class": "Pact::ArrayLike",
+          "contents": {
+            "name": {
+              "json_class": "Pact::SomethingLike",
+              "contents": "Luke Skywalker"
+            },
+            "gender": {
+              "json_class": "Pact::SomethingLike",
+              "contents": "male"
+            },
+            "mass": {
+              "json_class": "Pact::SomethingLike",
+              "contents": "77"
+            },
+            "height": {
+              "json_class": "Pact::SomethingLike",
+              "contents": "172"
+            }
+          },
+          "min": 1
+        }
+      }
+    }
+  }
+}
+I, [2022-06-15T14:49:13.861981 #12853]  INFO -- : Verifying - interactions matched
+I, [2022-06-15T14:49:13.866522 #12853]  INFO -- : Cleared interactions
+I, [2022-06-15T14:49:13.874700 #12853]  INFO -- : Registered expected interaction POST /graphql
+I, [2022-06-15T14:49:13.875745 #12853]  INFO -- : Received request POST /graphql
+D, [2022-06-15T14:49:13.876499 #12853] DEBUG -- : {
+  "description": "a ships request",
+  "request": {
+    "method": "POST",
+    "path": "/graphql",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "operationName": "Ships",
+      "query": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "\n                            query Ships($page: Int = 1){\n                                ships(page: $page){\n                                    count\n                                    results{\n                                        name\n                                        length\n                                        crew\n                                        starship_class\n                                    }\n                                }\n                            }\n                        ",
+          "matcher": {
+            "json_class": "Regexp",
+            "o": 0,
+            "s": "\\s*query\\s*Ships\\(\\$page:\\s*Int\\s*=\\s*1\\)\\{\\s*ships\\(page:\\s*\\$page\\)\\{\\s*count\\s*results\\{\\s*name\\s*length\\s*crew\\s*starship_class\\s*\\}\\s*\\}\\s*\\}\\s*"
+          }
+        }
+      },
+      "variables": {
+        "page": 1
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "data": {
+        "ships": {
+          "count": {
+            "json_class": "Pact::SomethingLike",
+            "contents": 36
+          },
+          "results": {
+            "json_class": "Pact::ArrayLike",
+            "contents": {
+              "name": {
+                "json_class": "Pact::SomethingLike",
+                "contents": "CR90 corvette"
+              },
+              "length": {
+                "json_class": "Pact::SomethingLike",
+                "contents": "150"
+              },
+              "crew": {
+                "json_class": "Pact::SomethingLike",
+                "contents": "30-165"
+              },
+              "starship_class": {
+                "json_class": "Pact::SomethingLike",
+                "contents": "corvette"
+              }
+            },
+            "min": 1
+          }
+        }
+      }
+    }
+  },
+  "metadata": null
+}
+D, [2022-06-15T14:49:13.877607 #12853] DEBUG -- : {
+  "path": "/graphql",
+  "query": "",
+  "method": "post",
+  "body": {
+    "query": "\n        query Ships($page: Int = 1){\n            ships(page: $page){\n              count\n              results{\n                name\n                length\n                crew\n                starship_class\n              }\n            }\n          }\n        ",
+    "variables": {
+      "page": 1
+    },
+    "operationName": "Ships"
+  },
+  "headers": {
+    "Content-Length": "330",
+    "Content-Type": "application/json",
+    "Accept": "*/*",
+    "User-Agent": "node-fetch/1.0 (+https://github.com/bitinn/node-fetch)",
+    "Accept-Encoding": "gzip,deflate",
+    "Connection": "close",
+    "Host": "127.0.0.1:34285",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2022-06-15T14:49:13.881084 #12853]  INFO -- : Found matching response for POST /graphql
+D, [2022-06-15T14:49:13.882420 #12853] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "data": {
+      "ships": {
+        "count": {
+          "json_class": "Pact::SomethingLike",
+          "contents": 36
+        },
+        "results": {
+          "json_class": "Pact::ArrayLike",
+          "contents": {
+            "name": {
+              "json_class": "Pact::SomethingLike",
+              "contents": "CR90 corvette"
+            },
+            "length": {
+              "json_class": "Pact::SomethingLike",
+              "contents": "150"
+            },
+            "crew": {
+              "json_class": "Pact::SomethingLike",
+              "contents": "30-165"
+            },
+            "starship_class": {
+              "json_class": "Pact::SomethingLike",
+              "contents": "corvette"
+            }
+          },
+          "min": 1
+        }
+      }
+    }
+  }
+}
+I, [2022-06-15T14:49:13.887910 #12853]  INFO -- : Verifying - interactions matched
+I, [2022-06-15T14:49:13.891879 #12853]  INFO -- : Cleared interactions
+I, [2022-06-15T14:49:13.897182 #12853]  INFO -- : Updating pact for nest adapter at /workspaces/pact-test-example/graphql-client/pact/pacts/graphql_client-nest_adapter.json
+I, [2022-06-15T14:49:13.904013 #12853]  INFO -- : *****************************************************************************
+I, [2022-06-15T14:49:13.904847 #12853]  INFO -- : Updating existing file ./workspaces/pact-test-example/graphql-client/pact/pacts/graphql_client-nest_adapter.json as pactfile_write_mode is :update
+I, [2022-06-15T14:49:13.905572 #12853]  INFO -- : Only interactions defined in this test run will be updated.
+I, [2022-06-15T14:49:13.906356 #12853]  INFO -- : As interactions are identified by description and provider state, pleased note that if either of these have changed, the old interactions won't be removed from the pact file until the specs are next run with :pactfile_write_mode => :overwrite.
+I, [2022-06-15T14:49:13.907134 #12853]  INFO -- : *****************************************************************************

@@ -1,0 +1,66 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""character"""
+type Character {
+  birth_year: String!
+  created: String!
+  edited: String!
+  eye_color: String!
+  films: [String!]!
+  gender: String!
+  hair_color: String!
+  height: String!
+  homeworld: String!
+  mass: String!
+  name: String!
+  skin_color: String!
+  species: [String!]!
+  starships: [String!]!
+  url: String!
+  vehicles: [String!]!
+}
+
+"""character page"""
+type CharacterPage {
+  count: Float!
+  next: String
+  previous: String
+  results: [Character!]!
+}
+
+type Query {
+  characters(page: Int = 1): CharacterPage!
+  ships(page: Int = 1): ShipPage!
+}
+
+"""Star ships"""
+type Ship {
+  MGLT: String
+  cargo_capacity: String
+  consumables: String
+  cost_in_credits: String
+  created: String
+  crew: String
+  edited: String
+  films: [String!]!
+  hyperdrive_rating: String
+  length: String
+  manufacturer: String
+  max_atmosphering_speed: String
+  model: String
+  name: String
+  passengers: String
+  pilots: [String!]!
+  starship_class: String
+  url: String
+}
+
+"""Star ships page"""
+type ShipPage {
+  count: Float!
+  next: String
+  previous: String
+  results: [Ship!]!
+}
