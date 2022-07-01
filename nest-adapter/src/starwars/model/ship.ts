@@ -41,10 +41,10 @@ export class Ship {
     @Field({ nullable: true })
     starship_class: string;
     
-    @Field(type => [String])
+    @Field(() => [String])
     pilots: string[];
     
-    @Field(type => [String])
+    @Field(() => [String])
     films: string[];
     
     @Field({ nullable: true })

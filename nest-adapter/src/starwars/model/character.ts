@@ -29,16 +29,16 @@ export class Character {
     @Field()
     homeworld: string;
 
-    @Field(type => [String])
+    @Field(() => [String])
     films: string[];
 
-    @Field(type => [String])
+    @Field(() => [String])
     species: string[];
 
-    @Field(type => [String])
+    @Field(() => [String])
     vehicles: string[];
 
-    @Field(type => [String])
+    @Field(() => [String])
     starships: string[];
 
     @Field()

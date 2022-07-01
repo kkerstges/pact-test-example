@@ -12,6 +12,6 @@ export class CharacterPage {
     @Field({ nullable: true })
 	previous: string;
 
-    @Field(type => [Character])
+    @Field(() => [Character])
 	results: Character[]
 }
